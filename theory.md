@@ -31,7 +31,7 @@ Now, let us denote by $\mathbf{1}$ the vector of all $1$'s, i.e. $\mathbf{1} = (
 $$f = \frac{M}{\mathbf{1}^T M}$$
 Similarly, the fraction of chains terminating in monomers $f$ is
 $$f^* = \frac{M^*}{\mathbf{1}^T M^*}$$
-Finally, under the steady-state condition the mole fraction of incorporated moonomer is a vector
+Finally, under the steady-state condition the mole fraction of incorporated monomer is a vector
 $$F = \frac{ dM/dt }{ \mathbf{1}^T dM/dt}$$
 We shall assume that $M$, $M^*$ and $dM/dt$ are not identically 0 so that the above expressions for $f,f^*,F$ are well-defined.
 
