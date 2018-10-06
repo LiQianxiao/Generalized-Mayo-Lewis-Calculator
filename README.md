@@ -1,5 +1,7 @@
 # Theory
 
+![alt text](.images/theory-0.png)
+
 Suppose there are $n$ monomers species. Let
 $$M = (M_1, M_2,\dots, M_n) \in \mathbb{R}^d$$
 denote the vector of monomer concentrations, and
