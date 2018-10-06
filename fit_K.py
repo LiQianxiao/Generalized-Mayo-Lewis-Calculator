@@ -72,9 +72,3 @@ if __name__ == "__main__":
 
     np.savetxt('rc_outputs.csv', K_final, delimiter=',', fmt='%.3f')
     print('\nSaved output to <rc_outputs.csv>.')
-
-    if args.debug:
-        # ! Debug only
-        K_target = np.asarray(
-            [[1.0, 0.32, 0.5], [1.23, 0.6, 1.6], [0.8, 0.77, 0.3]])
-        print('Exact K (used to generate the synthetic data): ', K_target)
