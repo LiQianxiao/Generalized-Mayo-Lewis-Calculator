@@ -19,9 +19,22 @@ if __name__ == "__main__":
     n = K.shape[0]
     f_batch = np.loadtxt('monomer_inputs.csv', delimiter=',')
 
+    # Print Message
+    print('\nRead rate constant matrix: ')
+    print(K)
+
+    print('\nRead input monomer mole fractions: ')
+    for f in f_batch:
+        print(f)
+
     # Compute and save output
     F_batch = []
     for f in f_batch:
         F_batch.append(compute_F(f, K))
+
+    print('\nComputed output product mole fractions: ')
+    for F in F_batch:
+        print(F)
+
     np.savetxt('product_outputs.csv', F_batch, fmt='%.3f', delimiter=', ')
-    print('Saved output to <product_outputs.csv>.')
+    print('\nSaved output to <product_outputs.csv>.')

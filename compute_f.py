@@ -44,9 +44,24 @@ if __name__ == "__main__":
     K = np.loadtxt('rate_constants.csv', delimiter=',')
     n = K.shape[0]
     F_batch = np.loadtxt('product_inputs.csv', delimiter=',')
+
+    # Print Message
+    print('\nRead rate constant matrix: ')
+    print(K)
+
+    print('\nRead input product mole fractions: ')
+    for F in F_batch:
+        print(F)
+
     # Compute and save output
+    print('\nComputing output product mole fractions by L-BFGS-B...\n')
     f_batch = []
     for F in F_batch:
         f_batch.append(compute_f(F, K, n))
+
+    print('\nComputed output product mole fractions: ')
+    for f in f_batch:
+        print(f)
+
     np.savetxt('monomer_outputs.csv', f_batch, fmt='%.3f', delimiter=', ')
-    print('Saved output to <monomer_outputs.csv>.')
+    print('\nSaved output to <monomer_outputs.csv>.')
