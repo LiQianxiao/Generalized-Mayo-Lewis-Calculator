@@ -54,7 +54,7 @@ if __name__ == "__main__":
         print(F)
 
     # Compute and save output
-    print('\nComputing output product mole fractions by L-BFGS-B...\n')
+    print('\nComputing output product mole fractions by L-BFGS-B...')
     f_batch = []
     for F in F_batch:
         f_batch.append(compute_f(F, K, n))
