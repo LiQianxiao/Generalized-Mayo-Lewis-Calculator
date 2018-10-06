@@ -1,3 +1,4 @@
+import argparse
 import numpy as np
 from compute_F import compute_F
 from scipy.optimize import minimize
@@ -17,6 +18,13 @@ def loss(K_flat, *args):
 
 
 if __name__ == "__main__":
+    # Parse args
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--debug", help="check against exact K using provided inputs",
+        action="store_true")
+    args = parser.parse_args()
+
     # Read data
     K_known = np.genfromtxt('rc_inputs.csv', delimiter=',')
     print('Read K values (known=values, unknown=nan):')
@@ -37,7 +45,7 @@ if __name__ == "__main__":
     # Find K
     n = K_known.shape[0]
     K_init = np.random.uniform(size=(n**2,))
-    bounds = [(0,10),]*(n**2)
+    bounds = [(0, 10), ]*(n**2)
     print('\nComputing K by L-BFGS-B...')
     results = minimize(
         loss, K_init,
@@ -52,8 +60,21 @@ if __name__ == "__main__":
     print('\nRecovered K:')
     print(K_final)
 
+    if args.debug:
+        # ! Debug only
+        K_target = np.asarray(
+            [[1.0, 0.32, 0.5], [1.23, 0.6, 1.6], [0.8, 0.77, 0.3]])
+        print('Exact K (used to generate the synthetic data): ')
+        print(K_target)
+
     print('\nTest Error (should be small for the results to be valid): ',
           loss(K_final.flatten(), f_test, F_test, K_known))
 
     np.savetxt('rc_outputs.csv', K_final, delimiter=',')
     print('\nSaved output to <rc_outputs.csv>.')
+
+    if args.debug:
+        # ! Debug only
+        K_target = np.asarray(
+            [[1.0, 0.32, 0.5], [1.23, 0.6, 1.6], [0.8, 0.77, 0.3]])
+        print('Exact K (used to generate the synthetic data): ', K_target)

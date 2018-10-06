@@ -23,8 +23,8 @@ def loss(f, *args):
 def compute_f(F, *args):
     K, n = args
     F = F / np.sum(F)
-    bounds = np.asarray([(0, 5),]*n)
-    init = np.asarray([2.5,]*n)
+    bounds = np.asarray([(0, 5), ]*n)
+    init = np.asarray([2.5, ]*n)
     results = minimize(
         loss, init,
         method='L-BFGS-B',
