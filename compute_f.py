@@ -20,10 +20,6 @@ def loss(f, *args):
     return np.linalg.norm(F_compute - F)**2
 
 
-def constraints(f):
-    return f
-
-
 def compute_f(F, *args):
     K, n = args
     F = F / np.sum(F)
