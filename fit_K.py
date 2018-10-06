@@ -54,3 +54,6 @@ if __name__ == "__main__":
 
     print('\nTest Error (should be small for the results to be valid): ',
           loss(K_final.flatten(), f_test, F_test, K_known))
+
+    np.savetxt('rc_outputs.csv', K_final, delimiter=',')
+    print('\nSaved output to <rc_outputs.csv>.')
