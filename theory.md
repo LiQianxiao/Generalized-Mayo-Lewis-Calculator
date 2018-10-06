@@ -29,7 +29,7 @@ where $K^T$ is the transpose of the matrix $K$ amd $\circ$ denotes vector Hadama
 
 Now, let us denote by $\mathbf{1}$ the vector of all $1$'s, i.e. $\mathbf{1} = (1, 1, \dots, 1)$. Then, the monomer mole fraction is a vector
 $$f = \frac{M}{\mathbf{1}^T M}$$
-Similarly, the fraction of chains terminating in monomers $f$ is
+Similarly, the fraction of chains terminating in monomers $M$ is
 $$f^* = \frac{M^*}{\mathbf{1}^T M^*}$$
 Finally, under the steady-state condition the mole fraction of incorporated monomer is a vector
 $$F = \frac{ dM/dt }{ \mathbf{1}^T dM/dt}$$
