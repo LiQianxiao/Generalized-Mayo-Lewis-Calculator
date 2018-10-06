@@ -12,7 +12,7 @@ We shall assume that $K$ is in general position, i.e. $K$ is invertible and diag
 Then, the generalized $n$-monomer Mayo-Lewis reaction is given by
 $$
 \begin{aligned}
-    M_i + M^*_j \overset{K_{ij}}{\longrightarrow} M^*_i,
+    M^*_i + M_j \overset{K_{ij}}{\longrightarrow} M^*_j,
     \qquad
     i,j = 1,2,\dots,n
 \end{aligned}
