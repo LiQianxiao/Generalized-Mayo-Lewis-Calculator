@@ -51,7 +51,7 @@ $$
     f^* = \frac{v_0(K,f)}{\mathbf{1}^T v_0(K, f)}
 $$
 
-Therefore, we have the relashionship between $F$ and $f$
+Therefore, we have the relationship between $F$ and $f$
 $$
     F = \frac{ f \circ K^T v_0(K, f) }{ f^T K^T v_0(K, f)}
 $$
