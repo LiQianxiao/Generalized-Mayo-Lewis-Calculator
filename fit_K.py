@@ -30,8 +30,8 @@ if __name__ == "__main__":
     print('Read K values (known=values, unknown=nan):')
     print(K_known)
 
-    f_train = np.loadtxt('rc_train_f.csv', delimiter=',')
-    F_train = np.loadtxt('rc_train_F.csv', delimiter=',')
+    f_train = np.loadtxt('rc_train_feed.csv', delimiter=',')
+    F_train = np.loadtxt('rc_train_Final.csv', delimiter=',')
     num_train = min(f_train.shape[0], F_train.shape[0])
     assert num_train > 0
     print('\nRead {} training samples.'.format(num_train))
