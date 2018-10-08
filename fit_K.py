@@ -1,6 +1,6 @@
 import argparse
 import numpy as np
-from compute_F import compute_F
+from compute_Final import compute_F
 from scipy.optimize import minimize
 from sklearn.model_selection import train_test_split
 
