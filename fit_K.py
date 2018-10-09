@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # Find K
     n = K_known.shape[0]
     K_init = np.random.uniform(size=(n**2,))
-    bounds = [(0, 10), ]*(n**2)
+    bounds = [(1e-3, 10), ]*(n**2)
     print('\nComputing K by L-BFGS-B...')
     results = minimize(
         loss, K_init,
