@@ -64,3 +64,25 @@ $$
     \right\|^2
 $$
 which can be solved numerically by the L-BFGS-B method.
+
+## Estimating rate constants
+
+Now, we consider the inverse problem.
+Assuming that we have $F$ and $f$, we may also estimate $K$
+as follows
+$$
+    K = \argmin_{\tilde{K} \in \R^{n\times n}}
+    \left\|
+        F - \frac{ f \circ \tilde{K}^T v_0(K, f) }{ f^T \tilde{K}^T v_0(K, f)}
+    \right\|^2
+    \qquad
+    \text{subject to}
+    \qquad
+    K_{ij} > 0
+    \text{ and }
+    \| K \| = 1
+$$
+The last constraint is used to eliminate degeneracies
+m 0
+(if $K$ is a minimizer then any positive multiple of it is also a minimizer).
+since only relative rates can be obtained.
