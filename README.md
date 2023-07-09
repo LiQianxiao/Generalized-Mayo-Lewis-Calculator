@@ -1,5 +1,10 @@
 # Program Usage
 
+Install (tested with python3.10) in a new virtual environment
+```bash
+pip install -r requirements_dev.txt
+```
+
 For theory, see [write-up](theory.pdf) in the repository
 
 ## 1. Computing product mole fractions from monomer mole fractions
@@ -64,44 +69,4 @@ The results are saved to ```monomer_outputs.csv```, in the format
 
 ## 3. Computing K from f and F
 
-### 3.1 Config files
-
-1. Put the known rate constants into ```rc_inputs.csv```, and leave the unknown ones as ```NaN```
-
-    Example (3 monomers):
-
-        k11, NaN, NaN
-        NaN, k22, k23
-        k31, NaN, k33
-
-2. Put the training data for f and F into ```rc_train_f.csv``` and ```rc_train_F.csv``` respectively in the following format. Note that the data for f and F should be matching.
-
-    Example: (3 monomers, 2 training samples):
-
-    In ```rc_train_f.csv```
-
-        f1, f2, f3
-        g1, g2, g3
-
-    In ```rc_train_F.csv```
-
-        F1, F2, F3
-        G1, G2, G3
-
-### 3.2 Usage
-
-Run ```fit_K.py```
-
-        python fit_K.py
-
-The results are saved to ```rc_outputs.csv``` in the usual format.
-
-        k11, k12, k13
-        k21, k22, k23
-        k31, k32, k33
-
-Make sure that the test loss is small before trusting the results.
-
-### Note
-
-Can optionally run the debug flag ```python fit_K.py --debug``` to check against results from synthetic data (the original csv files included in this repository should not be altered for this check)
+See demo in [fit_K.ipynb](fit_K.ipynb).
