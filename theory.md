@@ -80,9 +80,8 @@ $$
     \qquad
     K_{ij} > 0
     \text{ and }
-    \| K \| = 1
+    K_{11} = 1
 $$
 The last constraint is used to eliminate degeneracies
-m 0
 (if $K$ is a minimizer then any positive multiple of it is also a minimizer).
 since only relative rates can be obtained.
